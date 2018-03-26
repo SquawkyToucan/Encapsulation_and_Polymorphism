@@ -1,4 +1,4 @@
-package _01_introduction_to_encapsulation;
+package encapsulation_1;
 
 /*
  * Encapsulation is a way of protecting the data in a class from being
