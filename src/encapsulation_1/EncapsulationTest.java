@@ -1,7 +1,5 @@
 package encapsulation_1;
 
-import static org.junit.Assert.assertEquals;
-
 import org.junit.Test;
 import junit.framework.TestCase;
 
@@ -23,7 +21,7 @@ public class EncapsulationTest extends TestCase {
 		assertEquals("niriri es una buena canción", a.getNomen());
 		a.setNomen("");
 		assertEquals(" ", a.getNomen());
-		// object
+		// object (currently doesn't work) 
 		a.setMemberObject("ñîrîrî");
 		if(a.getMemberObject() instanceof String) {
 			System.err.println("It is still a string");
