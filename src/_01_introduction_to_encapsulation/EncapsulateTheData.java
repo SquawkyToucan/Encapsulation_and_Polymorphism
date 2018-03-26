@@ -23,11 +23,60 @@ public class EncapsulateTheData {
 	//2. Create a new JUnit Test case and write tests to verify that 
 	//   the member variables' getters and setters are working
 	
-	private int itemsRecieved; //must not be negative. All negative arguments get set to 0.
+	private int itemsReceived; //must not be negative. All negative arguments get set to 0.
 	private float degreesTurned; //must be locked between 0.0 and 360.0 inclusive.
 	private String nomenclature = " "; //must not be set to a blank string. Blank Strings get set to a space
 	private Object memberObj; //can be any object type except String. Strings get turned into objects.
 	
+	public int getItems() {
+		return itemsReceived;
+	}
+	public void setItems(int set) {
+		if(set < 0) {
+			itemsReceived = 0;
+		}
+		else {
+			itemsReceived = set;
+		}
+	}
+	
+	public float getDegrees() {
+		return degreesTurned;
+	}
+	public void setDegrees(float f) {
+		if(f > 0.0 && f < 360.0) {
+			//It worked
+			degreesTurned = f;
+		}
+		else {
+			System.err.println("Failed to set variable: Number is too high");
+		}
+	}
+	
+	public String getNomen() {
+		return nomenclature;
+	}
+	public void setNomen(String s) {
+		if(s.equals("")) {
+			nomenclature = " ";
+		}
+		else {
+			nomenclature = s;
+		}
+	}
+	
+	public Object getMemberObject() {
+		return memberObj;
+	}
+	public void setMemberObject(Object o) {
+		if(o instanceof String) {
+			Object b = o;
+			memberObj = b;
+		}
+		else {
+			memberObj = o;
+		}
+	}
 	public static void main(String[] args) {
 		
 	}
