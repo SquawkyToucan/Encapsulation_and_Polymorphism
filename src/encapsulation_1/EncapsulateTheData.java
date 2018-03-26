@@ -24,7 +24,7 @@ public class EncapsulateTheData {
 	//   the member variables' getters and setters are working
 	
 	private int itemsReceived; //must not be negative. All negative arguments get set to 0.
-	private float degreesTurned; //must be locked between 0.0 and 360.0 inclusive.
+	private double degreesTurned; //must be locked between 0.0 and 360.0 inclusive.
 	private String nomenclature = " "; //must not be set to a blank string. Blank Strings get set to a space
 	private Object memberObj; //can be any object type except String. Strings get turned into objects.
 	
@@ -40,13 +40,13 @@ public class EncapsulateTheData {
 		}
 	}
 	
-	public float getDegrees() {
+	public double getDegrees() {
 		return degreesTurned;
 	}
-	public void setDegrees(float f) {
-		if(f > 0.0 && f < 360.0) {
+	public void setDegrees(double d) {
+		if(d > 0.0 && d < 360.0) {
 			//It worked
-			degreesTurned = f;
+			degreesTurned = d;
 		}
 		else {
 			System.err.println("Failed to set variable: Number is too high");
@@ -70,8 +70,7 @@ public class EncapsulateTheData {
 	}
 	public void setMemberObject(Object o) {
 		if(o instanceof String) {
-			Object b = o;
-			memberObj = b;
+			memberObj = (Object) o;
 		}
 		else {
 			memberObj = o;
