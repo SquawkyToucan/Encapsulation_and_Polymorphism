@@ -6,7 +6,6 @@ import org.junit.Test;
 import junit.framework.TestCase;
 
 public class EncapsulationTest extends TestCase {
-	
 	@Test
 	public void testEncapsulation() {
 		// items
@@ -26,7 +25,6 @@ public class EncapsulationTest extends TestCase {
 		assertEquals(" ", a.getNomen());
 		// object
 		a.setMemberObject("ñîrîrî");
-		System.out.println(a.getMemberObject());
 		if(a.getMemberObject() instanceof String) {
 			System.err.println("It is still a string");
 		}

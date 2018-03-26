@@ -70,6 +70,7 @@ public class EncapsulateTheData {
 	}
 	public void setMemberObject(Object o) {
 		if(o instanceof String) {
+			System.out.println("It hath to hath been thy string");
 			memberObj = (Object) o;
 		}
 		else {
