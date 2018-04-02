@@ -102,9 +102,9 @@ assertTrue(testDoctor.getPatients().size() == 3);
 			testHospital.addPatient(new Patient());
 			i++;
 		}
-		// hospital assigns patients to doctors
+		// Assign
 		testHospital.assignPatientsToDoctors();
-		// hospital.getDoctors shows doctors have 3, 3, 2 patients
+		// Test to see how many patients there are
 		List<Doctor> testDoctors = testHospital.getDoctors();
 		assertEquals(3, testDoctors.get(0).getPatients().size());
 		assertEquals(3, testDoctors.get(1).getPatients().size());
