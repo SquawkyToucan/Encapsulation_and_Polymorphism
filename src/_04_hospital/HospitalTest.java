@@ -95,10 +95,12 @@ assertTrue(testDoctor.getPatients().size() == 3);
 		int i = 0;
 		while (i < 3) {
 			testHospital.addDoctor(new Doctor());
+			i++;
 		}
 		i = 0;
 		while (i < 8) {
 			testHospital.addPatient(new Patient());
+			i++;
 		}
 		// hospital assigns patients to doctors
 		testHospital.assignPatientsToDoctors();

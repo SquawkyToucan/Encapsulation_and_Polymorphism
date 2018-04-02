@@ -35,6 +35,9 @@ public class Hospital {
 					e.printStackTrace();
 				}
 				i++;
+				if(i >= patients.size()) {
+					break;
+				}
 			}
 		}
 	}
