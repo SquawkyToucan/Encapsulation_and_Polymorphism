@@ -6,15 +6,18 @@ import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 import java.util.ArrayList;
+import java.util.Random;
 
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
 @SuppressWarnings("serial")
-public class PolymorphWindow extends JPanel implements ActionListener, MouseMotionListener {
+public class PolymorphWindow extends JPanel implements ActionListener, MouseMotionListener, MouseListener {
     public static final int WIDTH = 900;
     public static final int HEIGHT = 600;
     
@@ -42,8 +45,19 @@ public class PolymorphWindow extends JPanel implements ActionListener, MouseMoti
    	 for(int i = 0; i < 250; i++) {
    		 polys.add(new MovingPolymorph(250, 250, 10, 10));
    	 }
-   	 for(int t = 0; t < 500; t = t + 5) {
+   	 for(int i = 0; i < 500; i = i + 10) {
+   		if(i % 20 == 0) {
+   			polys.add(new RedPolymorph(new Random().nextInt(500), new Random().nextInt(500), 10, 10));
+   		}
+   		else {
+   			polys.add(new BluePolymorph(new Random().nextInt(500), new Random().nextInt(500), 10, 10));
+   		}
+   	 }
+   	 for(int t = 0; t < 500; t = t + 25) {
    		 polys.add(new CirclePolymorph(t, t, 10, 10));
+   	 }
+   	 for(int x = 0; x < 500; x = x + 10) {
+   		 polys.add(new JOpPolymorph(new Random().nextInt(500), x, 10, 10));
    	 }
    	 m = new MousePolymorph(10, 10, 10, 10);
    	 timer = new Timer(1000 / 30, this);
@@ -82,5 +96,37 @@ public class PolymorphWindow extends JPanel implements ActionListener, MouseMoti
 	public void mouseMoved(MouseEvent e) {
 		m.setX(e.getX());
 		m.setY(e.getY());
+	}
+
+	@Override
+	public void mouseClicked(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mousePressed(MouseEvent e) {
+		// TODO Auto-generated method stub
+		if(e.getSource() instanceof JOpPolymorph) {
+			JOptionPane.showMessageDialog(null, "c l i c c ");
+		}
+	}
+
+	@Override
+	public void mouseReleased(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseEntered(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseExited(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
 	}
 }

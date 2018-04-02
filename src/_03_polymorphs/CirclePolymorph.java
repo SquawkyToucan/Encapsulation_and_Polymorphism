@@ -11,7 +11,7 @@ public class CirclePolymorph extends Polymorph {
 
 	@Override
 	public void draw(Graphics g) {
-		g.setColor(Color.YELLOW);
+		g.setColor(new Color(85, 0, 160));
 		g.fillRect(getX(), getY(), getWidth(), getHeight());
 	}
 	
