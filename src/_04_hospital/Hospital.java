@@ -25,10 +25,11 @@ public class Hospital {
 			System.err.println("There are too many patients to be assigned to doctors so some may be unassigned after this.");
 		}
 		int i = 0;
-		for (Doctor d: doctors) {
+		for (int k = 0; k < doctors.size(); k++) {
 			for(int j = 0; j < 3; j++) {
+				System.out.println("Assigning patient " + patients.get(i) + " to " + doctors.get(k));
 				try {
-					d.assignPatient(patients.get(i));
+					doctors.get(k).assignPatient(patients.get(i));
 				} catch (DoctorFullException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
