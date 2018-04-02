@@ -13,6 +13,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
+@SuppressWarnings("serial")
 public class PolymorphWindow extends JPanel implements ActionListener, MouseMotionListener {
     public static final int WIDTH = 900;
     public static final int HEIGHT = 600;

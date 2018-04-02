@@ -2,7 +2,6 @@ package _03_polymorphs;
 
 import java.awt.Color;
 import java.awt.Graphics;
-import java.awt.MouseInfo;
 
 public class MousePolymorph extends Polymorph {
 
