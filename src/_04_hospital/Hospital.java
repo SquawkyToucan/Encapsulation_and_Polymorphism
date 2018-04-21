@@ -11,6 +11,9 @@ public class Hospital {
 	}
 	public void addZombie(Zombie z) {
 		zombies.add(z);
+		if(patients.size() > 0) {
+			patients.remove(patients.size()-1);
+		}
 	}
 	public ArrayList<Doctor> getDoctors() {
 		return doctors;
@@ -32,10 +35,11 @@ public class Hospital {
 			System.err.println("There are too many patients to be assigned to doctors so some may be unassigned after this.");
 		}
 		int i = 0;
+		boolean destroy = false;
 		for (int k = 0; k < doctors.size(); k++) {
 			System.out.println(doctors.get(k));
 			for(int j = 0; j < 3; j++) {
-				//System.out.println("Assigning patient " + patients.get(i) + " to " + doctors.get(k));
+				System.out.println("Patient index: " + i);
 				try {
 					doctors.get(k).assignPatient(patients.get(i));
 				} catch (DoctorFullException e) {
@@ -46,8 +50,12 @@ public class Hospital {
 				System.out.println("i is now equal to " + i);
 				if(i >= patients.size()) {
 					System.out.println("Breaking...");
+					destroy = true;
 					break;
 				}
+			}
+			if(destroy) {
+				break;
 			}
 		}
 	}
