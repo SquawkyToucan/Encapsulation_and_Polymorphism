@@ -4,11 +4,36 @@ import java.util.ArrayList;
 
 public class Doctor {
 	// Specialties
+	Hospital myHospital = new Hospital();
 	boolean isSurgeon;
 	boolean makesHouseCalls;
+	boolean isOnDarkSide;
 	Doctor() {
 		isSurgeon = false;
 		makesHouseCalls = false;
+		isOnDarkSide = false;
+	}
+	Doctor(String s) {
+		isSurgeon = false;
+		makesHouseCalls = false;
+		if(s.equalsIgnoreCase("666")) {
+			isOnDarkSide = true;
+		}
+		else {
+			isOnDarkSide = false;
+		}
+	}
+	Doctor(String s, Hospital h) {
+		isSurgeon = false;
+		makesHouseCalls = false;
+		if(s.equalsIgnoreCase("666")) {
+			isOnDarkSide = true;
+		}
+		else {
+			isOnDarkSide = false;
+		}
+		h.addDoctor(this);
+		myHospital = h;
 	}
 	public boolean performsSurgery() {
 		return isSurgeon;
@@ -31,8 +56,25 @@ public class Doctor {
 	}
 	// Medicine
 	public void doMedicine() {
-		for(Patient p: patients) {
-			p.checkPulse();
+		if(isOnDarkSide) {
+			for(Patient p: patients) {
+				p.kill();
+				myHospital.addZombie(new Zombie("June 1"));
+			}
 		}
+		else {
+			for(Patient p: patients) {
+				p.checkPulse();
+			}
+		}
+	}
+	public boolean isEvil() {
+		return isOnDarkSide;
+	}
+	public void joinTheDarkSide() {
+		isOnDarkSide = true;
+	}
+	public Hospital getHospital() {
+		return myHospital;
 	}
 }
