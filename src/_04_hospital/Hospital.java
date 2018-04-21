@@ -33,6 +33,7 @@ public class Hospital {
 		}
 		int i = 0;
 		for (int k = 0; k < doctors.size(); k++) {
+			System.out.println(doctors.get(k));
 			for(int j = 0; j < 3; j++) {
 				//System.out.println("Assigning patient " + patients.get(i) + " to " + doctors.get(k));
 				try {
