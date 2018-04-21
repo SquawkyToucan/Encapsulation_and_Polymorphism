@@ -200,12 +200,18 @@ public class HospitalTest extends TestCase {
 	 * When a patient is killed they move from the Patient list to the Zombie list.
 	 * This will give you the current date and time: new Date().toString()
 	 */
+	@SuppressWarnings("unused")
 	public void testDeadPatientsBecomeZombies() throws Exception {
+		System.out.println(" ");
+		System.out.println(" ");
+		System.out.println(" ");
+		System.out.println(" ");
+		System.out.println(" ");
+		System.out.println(" ");
+		System.out.println(" ");
 		Hospital walkingDeadHospital = new Hospital();
 		Doctor evilDoctor = new Doctor("666", walkingDeadHospital);
 		Doctor niceDoctor = new Doctor("777", walkingDeadHospital);
-		walkingDeadHospital.addDoctor(evilDoctor);
-		walkingDeadHospital.addDoctor(niceDoctor);
 		walkingDeadHospital.addPatient(new Patient());
 		walkingDeadHospital.addPatient(new Patient());
 		walkingDeadHospital.addPatient(new Patient());
@@ -213,9 +219,13 @@ public class HospitalTest extends TestCase {
 		walkingDeadHospital.addPatient(new Patient());
 		walkingDeadHospital.assignPatientsToDoctors();
 		walkingDeadHospital.makeDoctorsWork();
-
 		assertEquals(3, walkingDeadHospital.getZombies().size());
 		assertEquals(2, walkingDeadHospital.getPatients().size());
+		System.out.println(" ");
+		System.out.println(" ");
+		System.out.println(" ");
+		System.out.println(" ");
+		System.out.println(" ");
 	}
 
 }

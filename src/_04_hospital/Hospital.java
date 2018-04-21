@@ -14,6 +14,7 @@ public class Hospital {
 		if(patients.size() > 0) {
 			patients.remove(patients.size()-1);
 		}
+		System.out.println("Zombie size = " + zombies.size() + ", patient size: " + patients.size());
 	}
 	public ArrayList<Doctor> getDoctors() {
 		return doctors;
@@ -25,6 +26,7 @@ public class Hospital {
 	ArrayList<Patient> patients = new ArrayList<>();
 	public void addPatient(Patient p) {
 		patients.add(p);
+		System.out.println("Patient size: " + patients.size());
 	}
 	public ArrayList<Patient> getPatients() {
 		return patients;
@@ -37,9 +39,7 @@ public class Hospital {
 		int i = 0;
 		boolean destroy = false;
 		for (int k = 0; k < doctors.size(); k++) {
-			System.out.println(doctors.get(k));
 			for(int j = 0; j < 3; j++) {
-				System.out.println("Patient index: " + i);
 				try {
 					doctors.get(k).assignPatient(patients.get(i));
 				} catch (DoctorFullException e) {
@@ -47,9 +47,7 @@ public class Hospital {
 					e.printStackTrace();
 				}
 				i++;
-				System.out.println("i is now equal to " + i);
 				if(i >= patients.size()) {
-					System.out.println("Breaking...");
 					destroy = true;
 					break;
 				}

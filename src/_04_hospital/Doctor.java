@@ -56,15 +56,16 @@ public class Doctor {
 	}
 	// Medicine
 	public void doMedicine() {
+		System.out.println(this + " " + isOnDarkSide);
 		if(isOnDarkSide) {
-			for(Patient p: patients) {
-				p.kill();
+			for(int i = 0; i < patients.size(); i++) {
+				patients.get(i).kill();
 				myHospital.addZombie(new Zombie("June 1"));
 			}
 		}
 		else {
-			for(Patient p: patients) {
-				p.checkPulse();
+			for(int i = 0; i < patients.size(); i++) {
+				patients.get(i).checkPulse();
 			}
 		}
 	}
